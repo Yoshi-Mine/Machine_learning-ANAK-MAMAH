@@ -18,12 +18,14 @@ Aplikasi ini adalah hasil kompilasi dari proyek **Speech-to-Text dan Language De
 
 ## 📦 Struktur Proyek
 
+```
 📁 Machine_learning-ANAK-MAMAH
 ├── dist/
-│ └── stt_lang_app_tk.exe # Aplikasi hasil build (.exe)
-├── stt_lang_app_tk.py # Kode sumber utama
-└── README.md # Dokumentasi proyek ini
-
+│   └── stt_lang_app_tk.exe        # Aplikasi hasil build (.exe)
+├── stt_lang_app_tk.py             # Kode sumber utama
+├── README.md                      # Dokumentasi proyek ini
+└── requirements.txt (opsional)    # Dependensi Python
+```
 
 ---
 
@@ -31,7 +33,9 @@ Aplikasi ini adalah hasil kompilasi dari proyek **Speech-to-Text dan Language De
 
 ### 🔹 Versi Windows (.exe)
 1. Unduh file:
-dist/stt_lang_app_tk.exe
+   ```
+   dist/stt_lang_app_tk.exe
+   ```
 2. Jalankan langsung dengan klik dua kali.
 3. Pilih model, pilih file audio (`.wav`, `.mp3`, `.flac`, `.m4a`, `.ogg`), lalu tekan **Transcribe**.
 4. Hasil teks dan bahasa akan muncul di jendela utama.
@@ -45,4 +49,72 @@ Jika ingin menjalankan langsung dari Python:
 ### 1️⃣ Instal dependensi
 ```bash
 pip install faster-whisper librosa soundfile langdetect numpy tqdm
+```
+
+### 2️⃣ Jalankan aplikasi
+```bash
 python stt_lang_app_tk.py
+```
+
+---
+
+## 🧰 Teknologi yang Digunakan
+
+| Komponen | Keterangan |
+|-----------|------------|
+| **Bahasa** | Python 3.8+ |
+| **GUI** | Tkinter |
+| **Model AI** | Faster Whisper |
+| **Audio Processing** | librosa, soundfile |
+| **Language Detection** | langdetect |
+| **Packaging** | PyInstaller (membuat `.exe`) |
+| **Version Control** | Git + Git LFS (untuk file besar) |
+
+---
+
+## ⚠️ Catatan Penting
+
+- File `.exe` ini berukuran besar (>500 MB) karena sudah termasuk model dan dependensi Python.
+- GitHub menggunakan **Git LFS (Large File Storage)** untuk menyimpan file besar.
+- Saat pertama kali menjalankan, model Whisper mungkin memerlukan waktu pemuatan awal.
+
+---
+
+## 📚 Contoh Tampilan Aplikasi
+
+```
++--------------------------------------------------------------+
+| Model size: [ small ▼ ]  [Load Model]                        |
+| Audio file: [ example.wav                        ] [Browse]  |
+| Beam size: [====|-----]  (5)                                 |
+| [Transcribe] [Exit]                                          |
+|--------------------------------------------------------------|
+| Transcription:                                               |
+|  -> "Ini contoh hasil transkripsi audio Anda..."             |
+|--------------------------------------------------------------|
+| Detected Languages:                                          |
+|  -> id: 0.98                                                 |
+|--------------------------------------------------------------|
+| Status: Transcription complete.                              |
++--------------------------------------------------------------+
+```
+
+---
+
+## 🔧 Rencana Pengembangan
+- 🎤 Menambahkan fitur rekam langsung dari mikrofon  
+- 💾 Menyimpan hasil transkripsi ke `.txt` atau `.json`  
+- 🌐 Menambahkan fitur terjemahan otomatis  
+- ⚡ Optimalisasi model agar berjalan lebih cepat di CPU  
+
+---
+
+## 🧾 Lisensi
+Proyek ini dilisensikan di bawah [MIT License](LICENSE).  
+Kamu bebas menggunakan, memodifikasi, dan mendistribusikannya untuk tujuan riset maupun pribadi.
+
+---
+
+## ❤️ Kontributor
+**Yoshi-Mine**  
+> _“Transform your voice into text — and understand the language behind it.”_
